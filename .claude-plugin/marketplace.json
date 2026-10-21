@@ -1,0 +1,12 @@
+{
+  "name": "mods",
+  "owner": { "name": "Rafael Costa" },
+  "description": "Rafael Costa's Claude Code mods",
+  "plugins": [
+    {
+      "name": "run-ledger",
+      "source": "./run-ledger",
+      "description": "Sub-agent model allocation: live agent graph, model routing (local or Jev), context exchange and API-rate costs"
+    }
+  ]
+}

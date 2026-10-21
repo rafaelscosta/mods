@@ -1,0 +1,116 @@
+{
+  "name": "run-ledger",
+  "version": "0.5.1",
+  "description": "Sub-agent model allocation: live agent graph, model routing (local or Jev), context exchange and API-rate costs",
+  "author": { "name": "Rafael Costa" },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "jevEndpoint": {
+      "type": "string",
+      "title": "Jev adapter URL",
+      "description": "HTTP endpoint that answers run-ledger's recommendation request (see README). Empty: Jev is off and makes zero calls.",
+      "default": ""
+    },
+    "routing": {
+      "type": "string",
+      "title": "Routing mode",
+      "description": "recommend: only show Jev's recommendation. auto: also apply it to eligible subagents.",
+      "options": ["recommend", "auto"],
+      "default": "recommend"
+    },
+    "autoRouteTypes": {
+      "type": "string",
+      "title": "Auto-routing eligible agent types",
+      "description": "Comma-separated subagent types auto mode may reroute (e.g. Explore). Empty: none.",
+      "default": ""
+    },
+    "jevModels": {
+      "type": "string",
+      "title": "Models offered to Jev",
+      "description": "Comma-separated model ids Jev may choose from. Empty: the current models in the price table.",
+      "default": ""
+    },
+    "budgetUsd": {
+      "type": "number",
+      "title": "Session budget (USD, API-rate estimate)",
+      "description": "Sent to Jev as the budget. 0: no budget.",
+      "default": 0
+    },
+    "jevTimeoutMs": {
+      "type": "number",
+      "title": "Jev timeout (ms)",
+      "description": "How long a spawn waits for Jev before it falls back to the engine's own choice.",
+      "default": 4000
+    },
+    "roles": {
+      "type": "boolean",
+      "title": "Register routing roles",
+      "description": "Registers five subagent roles (orchestrator, builder, implementer, executor, iterator) that the router assigns models to.",
+      "default": false
+    },
+    "band": {
+      "type": "string",
+      "title": "Context exchange band",
+      "description": "auto: while Claude works and two minutes after. always: whenever the run has context. off: never.",
+      "options": ["auto", "always", "off"],
+      "default": "auto"
+    },
+    "logDecisions": {
+      "type": "boolean",
+      "title": "Log routing decisions",
+      "description": "Writes one dim transcript line per routing decision (not sent to the model).",
+      "default": true
+    },
+    "autoOpen": {
+      "type": "boolean",
+      "title": "Open the pane on the first subagent",
+      "description": "Opens the run-ledger pane when the session's first subagent starts.",
+      "default": true
+    },
+    "baselineModel": {
+      "type": "string",
+      "title": "Savings baseline model",
+      "description": "The model 'routing saved' compares against: the same tokens priced as if everything ran on it.",
+      "default": "claude-opus-5-5"
+    },
+    "graphics": {
+      "type": "string",
+      "title": "Terminal graphics",
+      "description": "auto: real pixels on terminals that draw images (Ghostty, kitty; not inside tmux), braille elsewhere. pixels: always try pixels. braille: always braille.",
+      "options": ["auto", "pixels", "braille"],
+      "default": "auto"
+    },
+    "pixelDensity": {
+      "type": "number",
+      "title": "Pixel density",
+      "description": "Pixels per point for the pictures: 2 for Retina screens, 1 for standard ones (from 1 to 3). Lower costs less CPU.",
+      "default": 2
+    },
+    "theme": {
+      "type": "string",
+      "title": "Theme",
+      "description": "neon (bright, glowing), minimal (muted, little glow), contrast (high contrast), light (for a light terminal). auto: light where the terminal reports a light background (COLORFGBG), else neon.",
+      "options": ["auto", "neon", "minimal", "contrast", "light"],
+      "default": "auto"
+    },
+    "receipt": {
+      "type": "string",
+      "title": "Receipt when a run ends",
+      "description": "A few dim transcript lines (never sent to the model) with the run's models, cost and savings. subagents: for runs that spawned subagents. always: every run. off: never.",
+      "options": ["subagents", "always", "off"],
+      "default": "subagents"
+    },
+    "sound": {
+      "type": "boolean",
+      "title": "Sound when a run ends",
+      "description": "A short chime when a run with subagents ends (a lower one if something failed). macOS plays it; other systems have no player.",
+      "default": false
+    },
+    "intro": {
+      "type": "boolean",
+      "title": "Opening animation",
+      "description": "When the pane opens, nodes appear level by level and the roster cascades in.",
+      "default": true
+    }
+  }
+}
