@@ -26,8 +26,13 @@ No app desktop, onde `/plugin` não roda: clique em + ao lado da caixa do prompt
 
 O repositório é privado: a instalação só funciona para quem tem acesso a ele no GitHub e já tem uma credencial git para github.com na máquina (uma chave SSH, ou `gh auth login` seguido de `gh auth setup-git`). A instalação nunca pede essa credencial.
 
+### Pedir a um agente
+
+Basta dizer, por exemplo, "instale o run-ledger do repositório rafaelscosta/mods". O passo a passo que o agente segue está em [`AGENTS.md`](AGENTS.md): pré-requisitos, como evitar uma segunda cópia de um mod já instalado, instalação, conferência, atualização e as notas de cada mod.
+
 ## Adicionar um mod
 
 1. Copie a pasta do mod para a raiz deste repositório (`<mod>/.claude-plugin/plugin.json`, `<mod>/hooks/…`).
 2. Acrescente uma entrada em `.claude-plugin/marketplace.json`: `{ "name": "<mod>", "source": "./<mod>" }`, com o `name` igual ao do `plugin.json` do mod.
-3. Rode `claude plugin validate .` na raiz e faça o commit.
+3. Acrescente as notas do mod em `AGENTS.md`, seção 7 (como testar, opções, dependências).
+4. Rode `claude plugin validate .` na raiz e faça o commit.
