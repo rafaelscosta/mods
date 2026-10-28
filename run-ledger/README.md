@@ -232,9 +232,9 @@ Other commands: `live`, `timeline`, `ledger`, `replay`, `demo [off]`, `receipt`,
 
 With roles on, the router lays out the whole roster at each prompt. With routing `auto`, each role's subagent
 runs on its routed model. Auto routing applies only to registered roles and the types listed in
-`autoRouteTypes`, never to a fork, never when the Agent call named a model itself, and only to a model this
-host offers and prices. `/run-ledger roles off` and `/run-ledger routing recommend` undo it. Both commands
-change the plugin's settings, which reloads it.
+`autoRouteTypes` (`*` for every type), never to a fork, never when the Agent call named a model itself, and
+only to a model this host offers and prices. `/run-ledger roles off` and `/run-ledger routing recommend` undo
+it. Both commands change the plugin's settings, which reloads it.
 
 ## The routers
 
@@ -354,7 +354,7 @@ finished its task (~$0.04 against ~$0.18 on opus for the same work).
 | --- | --- | --- |
 | `roles` | `false` | Register the five routing roles (`/run-ledger roles on`). |
 | `routing` | `recommend` | `auto` applies the routed model to eligible subagents (`/run-ledger routing auto`). |
-| `autoRouteTypes` | `""` | Other subagent types auto mode may reroute, e.g. `Explore`. |
+| `autoRouteTypes` | `""` | Other subagent types auto mode may reroute, e.g. `Explore`; `*` for every type. A `model:` in an agent's frontmatter does not count as a choice: the routed model replaces it. |
 | `jevEndpoint` | `""` | Jev adapter URL. Empty: Jev off, the local router decides. |
 | `jevModels` | current four | Model ids the routers choose from. |
 | `budgetUsd` | `0` | Budget sent to Jev (API-rate estimate). 0: none. |

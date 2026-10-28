@@ -638,7 +638,7 @@ function rankingOf(value: unknown, offeredIds: readonly string[]): LedgerCandida
   return out.sort((a, b) => b.score - a.score)
 }
 
-/** Auto routing applies only where nothing else chose: not a fork, no explicit model, an allowed type. */
+/** Auto routing applies only where nothing else chose: not a fork, no explicit model, an allowed type (`*`: any). */
 export function isEligibleForAuto(args: {
   mode: string
   agentType: string
@@ -650,7 +650,7 @@ export function isEligibleForAuto(args: {
     args.mode === 'auto' &&
     !args.fork &&
     args.requestedModel === undefined &&
-    args.allowedTypes.includes(args.agentType)
+    (args.allowedTypes.includes('*') || args.allowedTypes.includes(args.agentType))
   )
 }
 

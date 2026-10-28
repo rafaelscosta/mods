@@ -21,7 +21,7 @@
     "autoRouteTypes": {
       "type": "string",
       "title": "Auto-routing eligible agent types",
-      "description": "Comma-separated subagent types auto mode may reroute (e.g. Explore). Empty: none.",
+      "description": "Comma-separated subagent types auto mode may reroute (e.g. Explore). *: every type. Empty: none.",
       "default": ""
     },
     "jevModels": {
