@@ -219,6 +219,10 @@ describe('Jev answers', () => {
     expect(isEligibleForAuto({ ...base, fork: true })).toBe(false)
     expect(isEligibleForAuto({ ...base, requestedModel: 'opus' })).toBe(false)
     expect(isEligibleForAuto({ ...base, agentType: 'Plan' })).toBe(false)
+    const any = { ...base, agentType: 'Plan', allowedTypes: ['*'] }
+    expect(isEligibleForAuto(any)).toBe(true)
+    expect(isEligibleForAuto({ ...any, fork: true })).toBe(false)
+    expect(isEligibleForAuto({ ...any, requestedModel: 'opus' })).toBe(false)
   })
 })
 
