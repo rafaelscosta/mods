@@ -6,7 +6,7 @@ Siga os passos na ordem. Pare e pergunte à pessoa sempre que um passo pedir uma
 
 ## 1. Pré-requisitos
 
-- `claude --version` responde (Claude Code instalado).
+- `claude --version` responde com **2.1.292 ou mais recente**. Antes disso, `claude plugin install` não aceita `--marketplace` (2.1.292), `claude plugin configure` não existe (2.1.285) e o `run-ledger` não carrega (2.1.284). Se a versão for mais antiga, peça à pessoa para rodar `claude update` e conferir de novo; não instale nada antes.
 - O GitHub está autenticado com uma conta que lê `rafaelscosta/mods`: `gh auth status`. A instalação nunca pede credencial; sem ela, falha. Se não houver login, peça à pessoa para rodar `gh auth login` e depois `gh auth setup-git`. Não inicie o login por ela.
 
 ## 2. Ver o que já está instalado

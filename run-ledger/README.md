@@ -380,7 +380,7 @@ them (latency, success rate, Jev's `pastResults`).
 
 ```sh
 claude plugin validate <mod folder>
-claude plugin test <mod folder>   # 110 tests: pricing, dedup, retries, unknowns, attribution, routing, roles,
+claude plugin test <mod folder>   # 112 tests: pricing, dedup, retries, unknowns, attribution, routing, roles,
                                   # Jev, savings, canvas, graph motion, live rates, context exchange,
                                   # rendering, animation, export, PNG (checked by an inflater in the test),
                                   # pixel pictures, terminal detection, braille fallback, cards under the
@@ -419,6 +419,10 @@ claude plugin test <mod folder>   # 110 tests: pricing, dedup, retries, unknowns
    `/run-ledger sound on` on macOS, a chime plays.
 
 ## Install
+
+Requires Claude Code 2.1.284 or later: older versions refuse the module (`claude plugin validate` fails) or
+break it (`claude plugin test` fails on 2.1.281–2.1.283). Installing from the marketplace with
+`claude plugin install run-ledger --marketplace rafaelscosta/mods` needs 2.1.292 or later.
 
 Copy the folder to `~/.claude/skills/run-ledger/`, or add its path to `CLAUDE_CODE_PLUGIN_DIRS` under `env`
 in `~/.claude/settings.json`, or run once with `claude --plugin-dir <folder>`.

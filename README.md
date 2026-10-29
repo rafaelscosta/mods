@@ -8,6 +8,8 @@ Mods do Claude Code de Rafael Costa: uma pasta por mod, todas listadas em `.clau
 
 ## Instalar
 
+Requer **Claude Code 2.1.292 ou mais recente** (`claude --version`; para atualizar, `claude update`). É a versão em que `claude plugin install` ganhou `--marketplace`. O `run-ledger` em si roda desde a 2.1.284; numa versão anterior o mod não carrega.
+
 No prompt de uma sessão de terminal:
 
 ```
