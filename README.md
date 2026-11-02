@@ -26,7 +26,7 @@ claude plugin install run-ledger --marketplace rafaelscosta/mods
 
 No app desktop, onde `/plugin` não roda: clique em + ao lado da caixa do prompt, depois Plugins, Add marketplace com `rafaelscosta/mods`, depois Add plugin.
 
-O repositório é privado: a instalação só funciona para quem tem acesso a ele no GitHub e já tem uma credencial git para github.com na máquina (uma chave SSH, ou `gh auth login` seguido de `gh auth setup-git`). A instalação nunca pede essa credencial.
+O repositório é público: a instalação não pede conta nem credencial do GitHub.
 
 ### Pedir a um agente
 

@@ -1,13 +1,13 @@
 # Instruções para agentes: instalar os mods deste repositório
 
-Este repositório (`rafaelscosta/mods`, privado) é um marketplace de mods do Claude Code. Cada mod fica numa pasta própria e está listado em `.claude-plugin/marketplace.json` (`plugins[].name`). O nome do marketplace é `mods`, então um mod instalado daqui recebe o id `<mod>@mods`.
+Este repositório (`rafaelscosta/mods`, público) é um marketplace de mods do Claude Code. Cada mod fica numa pasta própria e está listado em `.claude-plugin/marketplace.json` (`plugins[].name`). O nome do marketplace é `mods`, então um mod instalado daqui recebe o id `<mod>@mods`.
 
 Siga os passos na ordem. Pare e pergunte à pessoa sempre que um passo pedir uma decisão dela.
 
 ## 1. Pré-requisitos
 
 - `claude --version` responde com **2.1.292 ou mais recente**. Antes disso, `claude plugin install` não aceita `--marketplace` (2.1.292), `claude plugin configure` não existe (2.1.285) e o `run-ledger` não carrega (2.1.284). Se a versão for mais antiga, peça à pessoa para rodar `claude update` e conferir de novo; não instale nada antes.
-- O GitHub está autenticado com uma conta que lê `rafaelscosta/mods`: `gh auth status`. A instalação nunca pede credencial; sem ela, falha. Se não houver login, peça à pessoa para rodar `gh auth login` e depois `gh auth setup-git`. Não inicie o login por ela.
+- `git` instalado e acesso de rede a github.com. O repositório é público: não precisa de conta nem de credencial do GitHub.
 
 ## 2. Ver o que já está instalado
 
@@ -34,7 +34,7 @@ Alternativas para a própria pessoa: no prompt de uma sessão de terminal, `/plu
 
 Erros comuns:
 
-- `Marketplace file not found at …`: a origem está errada, ou a conta não tem acesso ao repositório privado.
+- `Marketplace file not found at …`: a origem está errada (confira `rafaelscosta/mods`), ou não há rede até github.com.
 - `Plugin "<mod>" not found in marketplace "mods"`: o nome não está em `.claude-plugin/marketplace.json`.
 
 ## 4. Conferir
