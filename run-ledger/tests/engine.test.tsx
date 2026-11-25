@@ -332,7 +332,7 @@ describe('routing', () => {
     expect(sent.availableModels).toContainEqual({
       id: 'claude-haiku-4-5',
       usdPerMTok: { input: 1, output: 5, cacheWrite: 1.25, cacheRead: 0.1 },
-      pricesAsOf: '2026-09-25',
+      pricesAsOf: '2026-11-25',
     })
     const doc = await exported($, writes)
     expect(doc.recommendations.map(r => r.applied)).toEqual([true, false, false])
