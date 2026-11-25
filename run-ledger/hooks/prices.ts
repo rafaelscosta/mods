@@ -39,7 +39,6 @@ export const PRICES: readonly PriceRow[] = [
   row('claude-sonnet-5-5', 2, 10, 0.1),
   row('claude-sonnet-5', 2, 10),
   row('claude-sonnet-4-6', 3, 15),
-  row('claude-haiku-5-5', 0.1, 0.5, 0.01),
   row('claude-haiku-4-5', 1, 5),
 ]
 
