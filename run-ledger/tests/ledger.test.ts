@@ -56,6 +56,15 @@ describe('costs', () => {
     expect(cost.usd).toBeLessThan(0.026001)
   })
 
+  test('prices Fable 5.2, and the fable alias resolves to it', () => {
+    // fable-5-2: in 8, out 40, cache write 10 (1.25x), cache read 0.20 per MTok
+    const cost = estimateCost('claude-fable-5-2[1m]', usage)
+    expect(cost.basis).toBe('priced')
+    expect(cost.usd).toBeGreaterThan(0.049999)
+    expect(cost.usd).toBeLessThan(0.050001)
+    expect(estimateCost('fable', usage).usd).toBe(cost.usd)
+  })
+
   test('recognises provider spellings of a model id', () => {
     expect(normalizeModel('us.anthropic.claude-haiku-4-5-20251001-v1:0')).toBe('claude-haiku-4-5')
     expect(normalizeModel('claude-opus-5-5[1m]')).toBe('claude-opus-5-5')

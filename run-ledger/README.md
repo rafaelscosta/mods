@@ -260,7 +260,7 @@ answer replaces the local router's. With it empty, no Jev call is made and no cr
 ## How costs are counted
 
 - **API-rate estimates, not subscription charges.** Prices are Anthropic first-party API list prices dated
-  `2026-09-25` (`hooks/prices.ts`). A Claude subscription is not billed per token. Bedrock and Vertex price
+  `2026-11-25` (`hooks/prices.ts`). A Claude subscription is not billed per token. Bedrock and Vertex price
   separately.
 - **Each request is counted once**, in the `turn.step` hook, keyed by `loop | turn | step index | attempt`.
   The turn's summed usage (`turn.complete`) is never added on top.
@@ -290,7 +290,7 @@ On every subagent spawn, run-ledger POSTs this (run-ledger's own contract; your 
             "requestedModel": null, "parentModel": "claude-opus-5-5" },
   "availableModels": [ { "id": "claude-haiku-4-5",
                          "usdPerMTok": { "input": 1, "output": 5, "cacheWrite": 1.25, "cacheRead": 0.1 },
-                         "pricesAsOf": "2026-09-25" } ],
+                         "pricesAsOf": "2026-11-25" } ],
   "budget": { "limitUsd": null, "spentUsdEstimate": 0.42, "spentHasUnknown": false },
   "pastResults": [ { "agentType": "run-ledger:builder", "model": "claude-sonnet-5-5", "outcome": "completed",
                      "costUsd": 0.04, "durationMs": 40000, "at": 0 } ]
